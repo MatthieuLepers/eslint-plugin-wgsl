@@ -32,13 +32,11 @@ This plugin provides a custom parser for standalone `.wgsl` files and two indepe
 In your `.eslintrc.cjs` configuration:
 
 ```javascript
-const wgslPlugin = require("eslint-plugin-wgsl");
-
 module.exports = {
   overrides: [
     {
       files: ["**/*.wgsl"],
-      parser: wgslPlugin.parsers.wgsl,
+      parser: "eslint-plugin-wgsl/parser",
       plugins: ["wgsl"],
       rules: {
         "wgsl/valid-wgsl": "error",
@@ -55,14 +53,12 @@ The custom parser allows ESLint to process WGSL files without interpreting their
 To validate `wgsl` tagged template literals, enable the `valid-wgsl-template` rule for JavaScript and TypeScript files:
 
 ```javascript
-const wgslPlugin = require("eslint-plugin-wgsl");
-
 module.exports = {
   plugins: ["wgsl"],
   overrides: [
     {
       files: ["**/*.wgsl"],
-      parser: wgslPlugin.parsers.wgsl,
+      parser: "eslint-plugin-wgsl/parser",
       rules: {
         "wgsl/valid-wgsl": "error",
       },
