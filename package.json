@@ -30,7 +30,8 @@
   "scripts": {
     "build": "tsup src/index.ts src/parser.ts --format esm,cjs --dts",
     "typecheck": "tsc --noEmit",
-    "prepack": "npm run build"
+    "prepack": "npm run build",
+    "prepare": "npm run build"
   },
   "dependencies": {
     "wgsl-linter": "^0.5.0"
